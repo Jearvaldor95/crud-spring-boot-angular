@@ -1,10 +1,13 @@
 # crud-spring-boot-angular
-Aplicación con spring boot y angular, permite crear, leer, actualizar y eliminar usuario; con filtros de tablas, paginación y mensajes de confirmaciones
+Aplicación con spring boot y angular, permite crear, leer, actualizar y eliminar usuarios; con filtros de tablas, paginación y mensajes de confirmaciones
 
 #Dependencias spring 
 * devtools
-* Hdb
+* H2
+* jpa
 
-para los filtros se uso los Pipe de angular
-para las paginación se uso la librea ngx-paginations
+para los filtros se uso los Pipe de angular.
+
+para las paginación se uso ngx-pagination.
+
 para los mensajes de confimarción se uso seewtalert2
