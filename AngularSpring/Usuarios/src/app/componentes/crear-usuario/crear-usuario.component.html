@@ -1,0 +1,24 @@
+<div class="col-sm-6 offset-sm-3">
+    <h3>Guardar Usario</h3>
+    <!--Usuamos Binging de angular para llamr al metodo del .ts asociado-->
+    <!--la sintaxis [()] bananaInBox es un Two Binding-->
+    <form (ngSubmit)="enviarFormulario()">
+        <div class="form-group">
+            <label for="">Nombre Usuario</label>
+            <input type="text" class="form-control" id="usuario"
+            [(ngModel)]="usuario.usuario" name="usuario">
+        </div>
+        <div class="form-group">
+            <label for="">Nacionalidad</label>
+            <input type="text" class="form-control" id="nacionalidad"
+            [(ngModel)]="usuario.nacionalidad" name="nacionalidad">
+        </div>
+        <div class="form-group">
+            <label>Email</label>
+            <input type="text" class="form-control" id="email"
+            [(ngModel)]="usuario.email" name="email">
+        </div>
+
+        <button class="btn btn-success" type="submit">Guardar</button>
+    </form>
+</div>

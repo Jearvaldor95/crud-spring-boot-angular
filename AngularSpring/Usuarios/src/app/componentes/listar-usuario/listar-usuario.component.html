@@ -1,0 +1,37 @@
+<h2>Lista de usuarios</h2>
+
+<div class="text-end">
+    <label class="">Filtrar usuario </label>
+    <input type="search" [(ngModel)]="filtroUsuarios" name="filtroUsuarios" placeholder="Nombre usuario">
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>USUARIO</th>
+            <th>NACIONALIDAD</th>
+            <th>EMAIL</th>
+            <th>OPCIONES</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr
+            *ngFor="let u of usuarios | filtro: filtroUsuarios | paginate: {itemsPerPage:5, currentPage: paginas, totalItems: totalItems}">
+            <!--{{}} es interpolacion para acceder a los campos-->
+            <td>{{u.id}}</td>
+            <td>{{u.usuario}}</td>
+            <td>{{u.nacionalidad}}</td>
+            <td>{{u.email}}</td>
+            <td>
+                <!--estos botones llaman alos metos definidos en el .ts del componente listar.usuario-->
+                <button (click)="actualizarUsuario(u.id)" class="btn btn-primary"> Actualizar</button>
+                <button (click)="eliminarUsuario(u.id)" class="btn btn-danger">Eliminar</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div class="text-center">
+    <pagination-controls (pageChange)="paginacion($event)" previousLabel="Anterior"
+        nextLabel="Siguiente"></pagination-controls>
+</div>

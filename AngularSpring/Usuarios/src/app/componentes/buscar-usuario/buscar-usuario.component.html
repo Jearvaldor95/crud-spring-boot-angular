@@ -1,0 +1,12 @@
+<div class="col-sm-6 offset-sm-3">
+    <h3>Buscar usuario por ID</h3>
+
+    <form (ngSubmit)="enviarFormulario()">
+        <div class="dorm-group">
+            <label>ID</label>
+            <input type="text" class="form-control" [(ngModel)]="id" id="id" name="id">
+        </div>
+        <button type="submit" class="btn btn-success">Buscar</button>
+    </form>
+
+</div>
